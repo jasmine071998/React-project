@@ -40,7 +40,7 @@ class App extends React.Component{
     super()
     this.state = {
       
-      isLoggedIn : true,
+      isLoggedIn : false,
       todos : todosData,
       count :0,
       dcount : 0
@@ -89,6 +89,7 @@ handleChange(id){
       return(
         <div>
         {todoComp}
+        <h1>You are logged {this.state.isLoggedIn ? "in" : "out"}</h1>
               </div>
       )
   }
