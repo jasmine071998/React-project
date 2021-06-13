@@ -90,7 +90,7 @@ handleChange(id){
         <div>
         {todoComp}
         <h1>You are logged {this.state.isLoggedIn ? "in" : "out"}</h1>
-        <h1>thank you testchanges</h1>
+        <h1>thank you testchanges haha</h1>
               </div>
       )
   }
