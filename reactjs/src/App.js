@@ -90,11 +90,7 @@ handleChange(id){
         <div>
         {todoComp}
         <h1>You are logged {this.state.isLoggedIn ? "in" : "out"}</h1>
-<<<<<<< HEAD
-        <h1>thank you testchanges haha</h1>
-=======
-        <h1>thank you, i will add this to gitub branch</h1>
->>>>>>> testchanges
+<h1>thank you</h1>
               </div>
       )
   }
