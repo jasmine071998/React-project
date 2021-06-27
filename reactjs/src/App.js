@@ -91,6 +91,7 @@ handleChange(id){
         {todoComp}
         <h1>You are logged {this.state.isLoggedIn ? "in" : "out"}</h1>
 <h1>thank you</h1>
+<Header username='jasmine'/>
               </div>
       )
   }
