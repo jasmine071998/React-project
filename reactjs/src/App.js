@@ -51,6 +51,7 @@ class App extends React.Component{
     this.handleClick = this.handleClick.bind(this)
     this.handleDC = this.handleDC.bind(this)
     this.handleChange=this.handleChange.bind(this)
+    this.handleclick1 = this.handleclick1.bind(this)
     
   }
   
@@ -66,6 +67,13 @@ handleDC (){
   })
 }
 
+handleclick1(){
+  this.setState(prevState => {
+    return {
+      isLoggedIn : !prevState.isLoggedIn
+    }
+  })
+}
 handleMouseOver(){
   console.log("Hover detected!!")
 }
@@ -104,11 +112,10 @@ componentDidMount(){
 {this.state.isLoading ? 
 <h1>Loading...</h1> : <Conditional/>
 }
+<button onClick ={this.handleclick1}>{this.state.isLoggedIn ? "Logout" : "Login"}</button>
               </div>
       )
   }
 }
-
-
 
 export default App;
