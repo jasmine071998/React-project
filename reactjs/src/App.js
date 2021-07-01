@@ -6,6 +6,7 @@ import ReactDOM from "react-dom"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import MainContent from "./components/MainContent"
+import Conditional from './components/Conditional';
 import TodoItem from "./TodoItem"
 import ContactCard from "./ContactCard"
 import Joke from "./Joke"
@@ -13,7 +14,6 @@ import jokesData from "./jokesData"
 import productData from "./productData"
 import Product from "./Product"
 import todosData from "./todosData"
-import Conditional from "./Conditional"
 import './style.css'
 
  /*
@@ -43,7 +43,8 @@ class App extends React.Component{
       isLoggedIn : false,
       todos : todosData,
       count :0,
-      dcount : 0
+      dcount : 0,
+      isLoading : true
   
     }
 
@@ -83,6 +84,15 @@ handleChange(id){
   }
   })
 }
+
+componentDidMount(){
+  setTimeout(() => {
+    this.setState({
+      isLoading : false
+    })
+  }, 1500)
+  }
+
   render(){
     const todoComp = this.state.todos.map(tdd => <TodoItem key = {tdd.id} todoarr = {tdd}
       handleChange={this.handleChange} />)
@@ -91,7 +101,9 @@ handleChange(id){
         {todoComp}
         <h1>You are logged {this.state.isLoggedIn ? "in" : "out"}</h1>
 <h1>thank you</h1>
-<Header username='jasmine'/>
+{this.state.isLoading ? 
+<h1>Loading...</h1> : <Conditional/>
+}
               </div>
       )
   }
